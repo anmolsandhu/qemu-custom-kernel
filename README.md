@@ -43,3 +43,5 @@ mkinitramfs -o ramdisk.img
 running the qemu with minimilast filesystem
 qemu-system-x86_64 -kernel arch/x86_64/boot/bzImage -nographic -append "console=ttyS0" -initrd ramdisk.img -m 512
 
+good resource for kernel coding chat-guide
+https://github.com/cirosantilli/linux-kernel-module-cheat/tree/6936bd6ba996dee40f7cd826e5cf01ef39c2cabf#tty
