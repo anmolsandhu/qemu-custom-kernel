@@ -62,3 +62,8 @@ wget https://storage.googleapis.com/syzkaller/wheezy.img
 
 qemu-system-x86_64 -m 1GB -kernel arch/x86/boot/bzImage -hda wheezy.img -append "root=/dev/sda"
 
+
+setting up buildroot filesystem
+
+https://buildroot.org/downloads/manual/manual.html#requirement-mandatory
+
