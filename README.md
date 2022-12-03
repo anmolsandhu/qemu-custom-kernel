@@ -43,9 +43,10 @@ mkinitramfs -o ramdisk.img
 running the qemu with minimilast filesystem
 qemu-system-x86_64 -kernel arch/x86_64/boot/bzImage -nographic -append "console=ttyS0" -initrd ramdisk.img -m 512
 
+-------------------
 good resource for kernel coding chat-guide
 custom andrid kernel 
-
+https://fadeevab.com/build-android-kernel-and-run-on-qemu-minimal-step-by-step/
 
 git clone https://android.googlesource.com/kernel/goldfish kernel/goldfish
 
