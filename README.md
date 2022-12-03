@@ -2,7 +2,7 @@
 commands to build custom kernel
 
 
-1 - creating a custom qemu kernel with packages to install
+1 - Packages to install
 
 ##########
 sudo apt install git
@@ -10,7 +10,7 @@ sudo apt install build-essential kernel-package fakeroot libncurses5-dev libssl-
 sudo apt install qemu qemu-system
 sudo apt install gdb
 
-2 - getting the kernel, depth is 1 to get repo without git log (version history)
+2 - getting the kernel, depth is 1 to get repo without git log (version history), otherwise it takes longer and the repo size is quite large
 
 ############
 git init
@@ -24,11 +24,10 @@ Configure the Linux kernel to build kernel image that is able to run on qemu(x86
 ########################
 make ARCH=x86_64 x86_64_defconfig   
 
-4 (CUSTOMIZE KERNEL CONFIG OPTIONAL) below command will open TUI(Text-based UI) to help you configure the linux kernel easly and also load current .config file automatically.
+4 (CUSTOMIZE KERNEL CONFIG, OPTIONAL) below command will open TUI(Text-based UI) to help you configure the linux kernel easly and also load current .config file automatically.
 
 #################
 make ARCH=x86_64 menuconfig
-
 
 5 - (build the kernel)
 
