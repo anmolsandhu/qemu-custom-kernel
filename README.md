@@ -44,4 +44,14 @@ running the qemu with minimilast filesystem
 qemu-system-x86_64 -kernel arch/x86_64/boot/bzImage -nographic -append "console=ttyS0" -initrd ramdisk.img -m 512
 
 good resource for kernel coding chat-guide
-https://github.com/cirosantilli/linux-kernel-module-cheat/tree/6936bd6ba996dee40f7cd826e5cf01ef39c2cabf#tty
+custom andrid kernel 
+
+
+git clone https://android.googlesource.com/kernel/goldfish kernel/goldfish
+cd ./kernel/goldfish
+git checkout -b android-4.4-dev origin/android-4.4
+make defconfig
+make -j4
+wget https://storage.googleapis.com/syzkaller/wheezy.img
+qemu-system-x86_64 -m 1GB -kernel arch/x86/boot/bzImage -hda wheezy.img -append "root=/dev/sda"
+
