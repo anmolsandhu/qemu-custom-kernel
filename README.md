@@ -67,3 +67,14 @@ setting up buildroot filesystem
 
 https://buildroot.org/downloads/manual/manual.html#requirement-mandatory
 
+make nconfig
+
+target -> x86
+
+filesystem -> ext4
+
+qemu-system-x86_64 -kernel arch/x86/boot/bzImage \
+-boot c -m 512 -hda ../buildroot/output/images/rootfs.ext2 \
+-append "root=/dev/sda rw console=ttyS0" \
+-serial stdio -display none
+
