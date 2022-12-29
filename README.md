@@ -5,14 +5,19 @@ commands to build custom kernel
 1 - Packages to install
 
 sudo apt install git
+
 sudo apt install build-essential kernel-package fakeroot libncurses5-dev libssl-dev ccache flex bison libelf-dev
+
 sudo apt install qemu qemu-system
+
 sudo apt install gdb
 
 2 - getting the kernel, depth is 1 to get repo without git log (version history), otherwise it takes longer and the repo size is quite large
 
 git init
+
 git remote add origin https://github.com/torvalds/linux.git
+
 git pull --depth=1 origin master
 
 3 - Configure the Linux Kernel
@@ -38,6 +43,7 @@ At this point we have the kernel image ready -  what we need is a file system to
 
 Options for building a file system
 1) creating a ramdisk is the most straightforward way
+
 mkinitramfs -o ramdisk.img 
 
 running the qemu with minimilast filesystem
@@ -45,7 +51,7 @@ qemu-system-x86_64 -kernel arch/x86_64/boot/bzImage -nographic -append "console=
 
 -------------------
 good resource for kernel coding chat-guide
-custom andrid kernel 
+custom android kernel 
 https://fadeevab.com/build-android-kernel-and-run-on-qemu-minimal-step-by-step/
 
 git clone https://android.googlesource.com/kernel/goldfish kernel/goldfish
